@@ -1,0 +1,18 @@
+old_sound_rabbit_mq:
+  connections:
+    default:
+      url: '%env(MESSENGER_TRANSPORT_DSN)%'
+      read_write_timeout: 4
+      heartbeat: 2
+  producers:
+    messaging:
+      connection:       default
+      exchange_options: { name: 'qMessages', type: direct }
+      class: 'App\Rabbit\MessagingProducer'
+  consumers:
+    messaging:
+      connection:       default
+      exchange_options: { name: 'qMessages', type: direct }
+      queue_options:    { name: 'qMessages'}
+      callback:         'App\Rabbit\MessageConsumer'
+      enable_logger:    true

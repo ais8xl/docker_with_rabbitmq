@@ -1,0 +1,4 @@
+2024/01/30 20:46:08 [error] 7#7: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/var/www/symfony/vendor/autoload_runtime.php): Failed to open stream: No such file or directory in /var/www/symfony/public/index.php on line 5; PHP message: PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/symfony/vendor/autoload_runtime.php' (include_path='.:/usr/share/php82') in /var/www/symfony/public/index.php:5
+Stack trace:
+#0 {main}
+  thrown in /var/www/symfony/public/index.php on line 5" while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.3:3000", host: "localhost"
